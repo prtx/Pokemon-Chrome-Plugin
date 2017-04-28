@@ -1,0 +1,22 @@
+{
+  "manifest_version": 2,
+  "name": "Pokepic",
+  "description": "Shows pictures of pokemons",
+  "version": "1.0",
+  "browser_action": {
+    "default_icon": "icon.png",
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["http://*/*"],  
+      "js": ["popup.js"]
+    }
+    ],
+  "permissions": [
+    "activeTab",
+    "https://ajax.googleapis.com/",
+	"https://apis.google.com/js/client.js?onload=handleClientLoad"
+  ],
+  "content_security_policy":"script-src 'self' https://apis.google.com; object-src 'self'"
+}
